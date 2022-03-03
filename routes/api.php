@@ -29,6 +29,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/articles', [ArticleController::class, 'index']);
 Route::get('/article/{id}', [ArticleController::class, 'show']);
 Route::group(['middleware' => ['auth:sanctum']], function (){
+    Route::get('/check_auth', function (){});
     Route::post('/article', [ArticleController::class, 'store']);
     Route::put('/article/{id}', [ArticleController::class, 'update']);
     Route::delete('/article/{id}', [ArticleController::class, 'destroy']);

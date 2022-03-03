@@ -19,6 +19,7 @@ class ArticleResource extends JsonResource
             'title' => $this->title,
             'created_at' => $this->created_at,
             'description' => $this->description,
+            'short_description' => substr(strip_tags($this->description), 0, 150),
             'author' => new UserResource($this->author()),
         ];
         return $data;

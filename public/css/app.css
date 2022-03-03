@@ -1,4 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);
 @charset "UTF-8";
 /*!
  * Bootstrap v5.1.3 (https://getbootstrap.com/)
@@ -11284,5 +11283,38 @@ textarea.form-control-lg {
 
   .d-print-none {
     display: none !important;
+  }
+}
+.system_error {
+  display: table;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+}
+.system_error .fof {
+  display: table-cell;
+  vertical-align: middle;
+}
+.system_error .fof h1, .system_error .fof .h1 {
+  font-size: 50px;
+  display: inline-block;
+  padding-right: 12px;
+  -webkit-animation: type 0.5s alternate infinite;
+          animation: type 0.5s alternate infinite;
+}
+@-webkit-keyframes type {
+  from {
+    box-shadow: inset -3px 0px 0px #888;
+  }
+  to {
+    box-shadow: inset -3px 0px 0px transparent;
+  }
+}
+@keyframes type {
+  from {
+    box-shadow: inset -3px 0px 0px #888;
+  }
+  to {
+    box-shadow: inset -3px 0px 0px transparent;
   }
 }
