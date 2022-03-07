@@ -23,6 +23,10 @@ let checkToken = function (vueObject) {
     }).catch((err) => {
         console.log(err)
         vueObject.$root.loggedIn = false;
+    }).finally(function () {
+        if (vueObject.$root.loggedIn && vueObject.$route.name === 'login') {
+            vueObject.$router.replace({name: 'home'})
+        }
     })
 }
 

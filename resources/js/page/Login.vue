@@ -68,6 +68,9 @@ export default {
             return !_.isEmpty(this.errors);
         }
     },
+    beforeMount() {
+        checkToken(this);
+    },
     methods: {
         login: function () {
             let _this = this;
