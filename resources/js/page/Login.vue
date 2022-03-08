@@ -74,7 +74,6 @@ export default {
     methods: {
         login: function () {
             let _this = this;
-            // console.log(_this.$route)
             axios.post('login', {
                 email: _this.email,
                 password: _this.password,
@@ -82,20 +81,16 @@ export default {
             })
                 .then(function (res) {
                     let data = res.data;
-                    console.log(_this.$route);
                     _this.$router.push({name: 'home'});
+                    //token will save for 30 days
                     saveToken(_this, data.access_token, '30d');
                     checkToken(_this);
             })
                 .catch(function (err) {
-
                     if(err.response) {
                         _this.errors = {};
                         let data = err.response.data;
-                        console.log(data)
                         _this.errors = data.errors
-                        console.log(_this.errors.email);
-
                     } else {
                         alert(err.messageerror)
                     }

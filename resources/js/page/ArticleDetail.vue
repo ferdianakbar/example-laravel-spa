@@ -70,13 +70,11 @@ export default {
                     _this.description = data.description;
                     _this.short_description = data.short_description;
                     _this.author = data.author;
-                    console.log(res);
                 })
                 .catch((err) => {
                     let _res = err.response;
 
                     if (_res.status === 404) {
-                        console.log('aa')
                         _this.$router.replace({ name: 'notFound' })
                     }
                 })
